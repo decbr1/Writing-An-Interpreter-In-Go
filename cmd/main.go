@@ -13,6 +13,9 @@ import (
 	"os/user"
 )
 
+// main welcomes the user to the Monkey REPL and starts it.
+// The REPL (Read Eval Print Loop) reads input, sends it to the interpreter
+// for evaluation, prints the result/output of the interpreter and starts again.
 func main() {
 	user, err := user.Current()
 	if err != nil {
