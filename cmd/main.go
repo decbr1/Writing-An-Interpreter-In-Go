@@ -2,4 +2,4 @@
 // a book by Thorsten Ball
 // https://interpreterbook.com/
 
-package cmd
+package main
