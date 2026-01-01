@@ -2,7 +2,7 @@
 
 package lexer
 
-import "WritingAnInterpreterInGo/cmd/token"
+import "monkey/cmd/token"
 
 // Lexer tokenizes Monkey source code. It will take source code as input and output
 // the tokens that represent the source code. It goes through its input and outputs

@@ -3,7 +3,7 @@
 package lexer
 
 import (
-	"WritingAnInterpreterInGo/cmd/token"
+	"monkey/cmd/token"
 	"testing"
 )
 

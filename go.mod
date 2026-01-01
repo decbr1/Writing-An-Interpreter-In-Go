@@ -1,3 +1,3 @@
-module WritingAnInterpreterInGo
+module monkey
 
 go 1.25

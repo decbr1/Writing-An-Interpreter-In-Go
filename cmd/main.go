@@ -7,8 +7,8 @@
 package main
 
 import (
-	"WritingAnInterpreterInGo/cmd/repl"
 	"fmt"
+	"monkey/cmd/repl"
 	"os"
 	"os/user"
 )

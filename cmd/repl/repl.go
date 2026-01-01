@@ -3,11 +3,11 @@
 package repl
 
 import (
-	"WritingAnInterpreterInGo/cmd/lexer"
-	"WritingAnInterpreterInGo/cmd/token"
 	"bufio"
 	"fmt"
 	"io"
+	"monkey/cmd/lexer"
+	"monkey/cmd/token"
 )
 
 const PROMPT = ">> "
