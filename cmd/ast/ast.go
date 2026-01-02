@@ -1,4 +1,4 @@
-// ./ast/ast.go
+// ./cmd/ast/ast.go
 
 package ast
 
