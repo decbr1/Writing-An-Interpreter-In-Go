@@ -59,8 +59,6 @@ func (es *ExpressionStatement) String() string {
 	return ""
 }
 
-// -=-= Prefix Expressions -=-=
-
 type PrefixExpression struct {
 	Token    token.Token // The prefix token, e.g. !
 	Operator string      // literal
@@ -75,6 +73,27 @@ func (pe *PrefixExpression) String() string {
 	out.WriteString("(")
 	out.WriteString(pe.Operator)
 	out.WriteString(pe.Right.String())
+	out.WriteString(")")
+
+	return out.String()
+}
+
+type InfixExpression struct {
+	Token    token.Token // the operator token, e.g. +
+	Left     Expression  // the expression to the left  of the operator
+	Operator string      // literal
+	Right    Expression  // the expression to the right of the operator
+}
+
+func (ie *InfixExpression) expressionNode()      {}
+func (ie *InfixExpression) TokenLiteral() string { return ie.Token.Literal }
+func (ie *InfixExpression) String() string {
+	var out bytes.Buffer
+
+	out.WriteString("(")
+	out.WriteString(ie.Left.String())
+	out.WriteString(" " + ie.Operator + " ")
+	out.WriteString(ie.Right.String())
 	out.WriteString(")")
 
 	return out.String()
