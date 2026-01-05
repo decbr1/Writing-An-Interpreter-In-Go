@@ -59,6 +59,27 @@ func (es *ExpressionStatement) String() string {
 	return ""
 }
 
+// -=-= Prefix Expressions -=-=
+
+type PrefixExpression struct {
+	Token    token.Token // The prefix token, e.g. !
+	Operator string      // literal
+	Right    Expression  // the expression to the right of the operator
+}
+
+func (pe *PrefixExpression) expressionNode()      {}
+func (pe *PrefixExpression) TokenLiteral() string { return pe.Token.Literal }
+func (pe *PrefixExpression) String() string {
+	var out bytes.Buffer
+
+	out.WriteString("(")
+	out.WriteString(pe.Operator)
+	out.WriteString(pe.Right.String())
+	out.WriteString(")")
+
+	return out.String()
+}
+
 // -=-= Let Statements -=-=
 
 type LetStatement struct {
