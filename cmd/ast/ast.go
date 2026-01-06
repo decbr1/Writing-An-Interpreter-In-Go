@@ -99,7 +99,7 @@ func (ie *InfixExpression) String() string {
 	return out.String()
 }
 
-// -=-= Let Statements -=-=
+// -=-= Let Statements =-=-
 
 type LetStatement struct {
 	Token token.Token // the token.LET token
@@ -125,7 +125,7 @@ func (ls *LetStatement) String() string {
 	return out.String()
 }
 
-// -=-= Return Statements -=-=
+// -=-= Return Statements =-=-
 
 type ReturnStatement struct {
 	Token       token.Token // the 'return' token
@@ -147,7 +147,7 @@ func (rs *ReturnStatement) String() string {
 	return out.String()
 }
 
-// -=-= Identifiers -=-=
+// -=-= Identifiers =-=-
 
 type Identifier struct {
 	Token token.Token // the token.IDENT token
@@ -158,7 +158,7 @@ func (i *Identifier) expressionNode()      {}
 func (i *Identifier) TokenLiteral() string { return i.Token.Literal }
 func (i *Identifier) String() string       { return i.Value }
 
-// -=-= Integer Literals -=-=
+// -=-= Integer Literals =-=-
 
 type IntegerLiteral struct {
 	Token token.Token
@@ -168,3 +168,5 @@ type IntegerLiteral struct {
 func (il *IntegerLiteral) expressionNode()      {}
 func (il *IntegerLiteral) TokenLiteral() string { return il.Token.Literal }
 func (il *IntegerLiteral) String() string       { return il.Token.Literal }
+
+// -=-= Boolean Literals =-=-
