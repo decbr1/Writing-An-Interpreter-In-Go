@@ -37,11 +37,10 @@ func TestLetStatements(t *testing.T) {
 		}
 
 		val := stmt.(*ast.LetStatement).Value
-		if !testIntegerLiteral(t, val, tt.expectedValue) {
+		if !testLiteralExpression(t, val, tt.expectedValue) {
 			return
 		}
 	}
-
 }
 
 func testLetStatement(t *testing.T, s ast.Statement, name string) bool {
