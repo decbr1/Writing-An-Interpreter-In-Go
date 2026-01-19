@@ -56,7 +56,7 @@ func TestEvalBooleanExpression(t *testing.T) {
 	}
 	for _, tt := range tests {
 		evaluated := testEval(tt.input)
-		testBooleanObject(t, evaluted, tt.expected)
+		testBooleanObject(t, evaluated, tt.expected)
 	}
 }
 
