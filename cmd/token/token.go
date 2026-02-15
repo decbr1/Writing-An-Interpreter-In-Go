@@ -58,6 +58,9 @@ const (
 	IF       = "IF"
 	ELSE     = "ELSE"
 	RETURN   = "RETURN"
+
+	// data types?
+	STRING = "STRING"
 )
 
 // keywords table maps keyword strings to their TokenType constants.
