@@ -73,6 +73,11 @@ func (l *Lexer) NextToken() token.Token {
 		tok = newToken(token.LBRACE, l.ch)
 	case '}':
 		tok = newToken(token.RBRACE, l.ch)
+
+	case '"':
+		tok.Type = token.STRING
+		tok.Literal = l.readString()
+
 	case 0:
 		// 0 is the ASCII code for "NUL" and signifies either "we haven't read anything yet"
 		// or "end of file" for us
@@ -185,4 +190,15 @@ func isLetter(ch byte) bool {
 // isDigit returns whether the passed in byte is a Latin digit between 0 and 9.
 func isDigit(ch byte) bool {
 	return '0' <= ch && ch <= '9'
+}
+
+func (l *Lexer) readString() string {
+	position := l.position + 1
+	for {
+		l.readChar()
+		if l.ch == '"' || l.ch == 0 {
+			break
+		}
+	}
+	return l.input[position:l.position]
 }
